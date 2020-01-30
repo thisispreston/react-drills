@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import List1 from './Components/List1.js'
+import List2 from './Components/List2.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      displayedList: [],
+    }
+  }
+
+  handleClick = (val) => {
+    this.setState({displayedList: [...this.state.displayedList, val]})
+  }
+
+  render () {
+    return (
+      <div className="App">
+        <h1>My To-do list:</h1>
+        <List1 add={this.handleClick}/>
+        <List2 tasks={this.state.displayedList}/>
+      </div>
+    )
+  }
 }
 
 export default App;
