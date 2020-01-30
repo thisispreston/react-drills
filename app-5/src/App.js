@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Meme from './Components/Meme.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  constructor (props) {
+    super (props)
+
+    this.state = {
+
+    }
+  }
+
+  render () {
+    return (
+      <div className='App'>
+        <Meme url="https://media.tenor.com/images/f2ef98e6c4a2ce5acc846bdf0c51901b/tenor.gif" />
+      </div>
+    )
+  }
+
 }
 
 export default App;
